@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:  
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - data-volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  
+  gui:
+    image: dpage/pgadmin4
+    ports:
+      - "8081:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=pgadmin
+
+volumes:
+  data-volume:
+    name: postgres-data
