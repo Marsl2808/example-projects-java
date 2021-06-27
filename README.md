@@ -1,2 +1,2 @@
 # example-projects-java
-Examples from various courses
+Example projects from different courses
