@@ -38,6 +38,7 @@ public class JpaMain {
 		try {
 
 			// TODO: use relative path (only running on local machine)
+			
 			//ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 //			URL url = ClassLoader.getSystemResource("maxmustermann.png");
 //			System.out.println(url.getPath());
@@ -46,6 +47,7 @@ public class JpaMain {
 //			System.out.println(path.getFileName());
 			
 			p.setPassbild(Files.readAllBytes(Paths.get("D:\\DEV\\java\\default\\example-projects-java\\jpa-project\\src\\main\\resources\\maxmustermann.png")));
+		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,6 +56,12 @@ public class JpaMain {
 		p.setKommentar("Testkommentar");
 		
 		personDao.persist(p);
+		
+		//update
+		p.setVorname("Martin");
+		
+		personDao.persist(p);
+		
 		personDao.shutdown();
 		
 	}

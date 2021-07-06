@@ -8,6 +8,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import de.mwe.dev.examples.model.listener.PersonListener;
 import lombok.Data;
 
 /**
@@ -25,6 +27,7 @@ import lombok.Data;
  *
  */
 @Entity
+@EntityListeners(PersonListener.class)
 @Data
 public class Person implements Serializable {
 
