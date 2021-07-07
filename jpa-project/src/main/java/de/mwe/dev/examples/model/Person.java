@@ -48,5 +48,10 @@ public class Person implements Serializable {
 	
 	@Column(name="HINWEIS")
 	private String kommentar;
+
+	@Override
+	public String toString() {
+		return vorname + " " + nachname;
+	}
 	
 }

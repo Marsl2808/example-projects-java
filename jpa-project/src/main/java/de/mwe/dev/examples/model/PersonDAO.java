@@ -52,9 +52,9 @@ public class PersonDAO {
 	}
 	
 
-	public void delete(long id) {
+	public void delete(int id) {
 		em.getTransaction().begin();
-		Person p = em.getReference(Person.class, 1L);
+		Person p = em.getReference(Person.class, id);
 		em.remove(p);
 		em.getTransaction().commit();
 	}

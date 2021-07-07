@@ -18,9 +18,6 @@ import de.mwe.dev.examples.model.PersonDAO;
  */
 public class JpaMain {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		
 		PersonDAO personDao = new PersonDAO();
@@ -59,8 +56,14 @@ public class JpaMain {
 		
 		//update
 		p.setVorname("Martin");
-		
 		personDao.persist(p);
+		
+		Person p2 = new Person();
+		p2.setGeschlecht(Geschlecht.WEIBLICH);
+		p2.setVorname("Eva");
+		p2.setNachname("Musterfrau");
+		p2.setKommentar("Halli Hallo");
+		personDao.persist(p2);
 		
 		personDao.shutdown();
 		
