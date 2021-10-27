@@ -6,7 +6,6 @@ package de.mwe.dev.examples;
 
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import de.mwe.dev.examples.model.Person;

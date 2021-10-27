@@ -126,7 +126,6 @@ public class App extends Application{
 						Image img = new Image(is,0,100,true,false);
 						bildView.setImage(img);
 					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

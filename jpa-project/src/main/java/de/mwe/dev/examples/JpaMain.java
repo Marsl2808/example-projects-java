@@ -46,7 +46,6 @@ public class JpaMain {
 			p.setPassbild(Files.readAllBytes(Paths.get("D:\\DEV\\java\\default\\example-projects-java\\jpa-project\\src\\main\\resources\\maxmustermann.png")));
 		
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
