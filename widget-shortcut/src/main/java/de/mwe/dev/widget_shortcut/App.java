@@ -1,6 +1,4 @@
-package app;
-
-
+package de.mwe.dev.widget_shortcut;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -9,9 +7,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -26,7 +22,7 @@ public class App extends Application {
 	Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
 	
     @Override
-    public void start(Stage stage) {
+    public void start(@SuppressWarnings("exports") Stage stage) {
     	
     	HBox root = new HBox();
     	root.setPrefSize(340.0, 70.0);

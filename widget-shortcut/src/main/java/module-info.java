@@ -1,5 +1,4 @@
-module de.mwe.dev.hellojfx {
+module de.mwe.dev.widget_shortcut {
     requires javafx.controls;
-	requires javafx.graphics;
-    exports app;
+    exports de.mwe.dev.widget_shortcut;
 }

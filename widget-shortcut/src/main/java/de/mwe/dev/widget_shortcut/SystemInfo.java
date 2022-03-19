@@ -1,4 +1,4 @@
-package app;
+package de.mwe.dev.widget_shortcut;
 
 public class SystemInfo {
 
