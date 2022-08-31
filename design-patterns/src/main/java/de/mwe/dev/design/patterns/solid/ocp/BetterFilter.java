@@ -16,5 +16,4 @@ public class BetterFilter implements Filter<Product> {
 	public Stream<Product> filter(List<Product> items, Specification<Product> spec) {
 		return items.stream().filter(p -> spec.isSatisfied(p));
 	}
-
 }
