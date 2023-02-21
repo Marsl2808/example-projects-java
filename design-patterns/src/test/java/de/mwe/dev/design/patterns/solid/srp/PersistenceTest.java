@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import org.junit.jupiter.api.Test;
 
@@ -24,11 +26,28 @@ class PersistenceTest {
 		Persistence p = new Persistence();
 		
 		URL url = Thread.currentThread().getContextClassLoader().getResource("");
-		String filename = url.getPath() + "journal.txt";
-		p.save(j, filename, true);
+		String fqFilename = url.getPath() + "journalDefault.txt";
+		p.save(j, fqFilename, true);
 		
-		Journal jLoad = p.load("journal.txt");
+		Journal jLoad = p.read(fqFilename);
 		
 		assertEquals(j.toString().substring(3), jLoad.toString().substring(3));		
+	}
+	
+	@Test
+	void testSpecifiedCharsetWrite() throws IOException {
+		Journal journal = new Journal();
+		journal.addEntry("my private thoughts of today");
+		
+		Persistence p = new Persistence();
+		
+		URL url = Thread.currentThread().getContextClassLoader().getResource("");
+		String fqFilename = url.getPath() + "journalAscii.txt";
+		Charset myCharset = StandardCharsets.US_ASCII;
+		p.save(journal, fqFilename, true, myCharset);
+		
+		Journal jLoadAscii = p.read(fqFilename, myCharset);
+		int x = 0;
+		
 	}
 }
