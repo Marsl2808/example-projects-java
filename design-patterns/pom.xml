@@ -5,8 +5,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 	<dependencies>
 
@@ -16,7 +16,7 @@
 			<version>5.4.0</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.javatuples</groupId>
 			<artifactId>javatuples</artifactId>
@@ -32,6 +32,31 @@
 				<!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
 				<version>2.22.2</version>
 			</plugin>
+
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.0.1</version>
+            <executions>
+                <execution>
+                    <id>attach-javadocs</id>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>
+                <docletArtifact>
+                    <groupId>nl.talsmasoftware</groupId>
+                    <artifactId>umldoclet</artifactId>
+                    <version>2.1.0</version>
+                </docletArtifact>
+                <additionalOptions>
+                    <!--<additionalOption>...</additionalOption>-->
+                </additionalOptions>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 </project>
