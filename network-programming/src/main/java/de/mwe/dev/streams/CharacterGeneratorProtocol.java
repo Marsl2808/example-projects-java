@@ -10,24 +10,25 @@ import java.nio.charset.StandardCharsets;
 
 public class CharacterGeneratorProtocol {
 
-  static private final String FILE_NAME = "src/main/resources/fileToCreate.txt";
+  private String filename;
   static private final Charset CHARSET = StandardCharsets.UTF_8;
 
-  public static void main(String[] args) {
+  public CharacterGeneratorProtocol(String filename) {
+    this.filename = filename;
+  }
 
-    CharacterGeneratorProtocol cgp = new CharacterGeneratorProtocol();
-
-    // 1) Write File by Stream (default charset)
-    try (OutputStream out = new FileOutputStream(FILE_NAME);
-        OutputStream bufferedOut = new BufferedOutputStream(out)) {
-      cgp.generateProtocolByStream(bufferedOut);
+  public void writeFileByWriter() {
+    try (FileWriter fw = new FileWriter(filename, CHARSET, true)) {
+      generateProtocolByWriter(fw);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
 
-    // 1) Write File by Writer
-    try (FileWriter fw = new FileWriter(FILE_NAME, CHARSET, true)) {
-      cgp.generateProtocolByWriter(fw);
+  public void writeFileByStream() {
+    try (OutputStream out = new FileOutputStream(filename);
+        OutputStream bufferedOut = new BufferedOutputStream(out)) {
+      generateProtocolByStream(bufferedOut);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -55,7 +56,7 @@ public class CharacterGeneratorProtocol {
     }
   }
 
-  private byte[] generateCharSequence() {
+  public static byte[] generateCharSequence() {
     int startChar = 33;
     int endChar = 126;
     int numBytes = endChar - startChar;
