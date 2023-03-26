@@ -11,16 +11,16 @@ public class MultifunctionPrinter implements Machine {
 
   @Override
   public void print(Document d) {
-    // TODO Auto-generated method stub
+    System.out.println("Printing document...\n(not implemented yet)");
   }
 
   @Override
   public void fax(Document d) {
-    // TODO Auto-generated method stub
+    System.out.println("Send document by Fax...\n(not implemented yet)");
   }
 
   @Override
   public void scan(Document d) {
-    // TODO Auto-generated method stub
+    System.out.println("Scanning document...\n(not implemented yet)");
   }
 }

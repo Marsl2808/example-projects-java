@@ -102,7 +102,7 @@ public class Persistence {
   }
 
   public Journal load(URL url) {
-    // TODO: implement me
+    System.out.println("Load journal from url...\n(not implemented yet)");
     return null;
   }
 }

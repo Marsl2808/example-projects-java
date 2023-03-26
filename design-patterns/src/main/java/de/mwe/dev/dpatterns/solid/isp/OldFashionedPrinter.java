@@ -11,6 +11,6 @@ public class OldFashionedPrinter implements Printer{
 
   @Override
   public void print(Document d) {
-    // TODO Auto-generated method stub
+    System.out.println("Printing document...\n(not implemented yet)");
   }
 }
