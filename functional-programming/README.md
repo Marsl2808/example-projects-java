@@ -1,0 +1,1 @@
+Examples based on book: Functional Programming in Java, The Pragmatic Programmers, Venkat Subramaniam
