@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#following will create a starter project based on protobuf-definition files located at src/main/proto
+# quarkus-maven-plugin code-gen is activated & generated code is locted at target (also example API-Class + tests are generated)
+
+mvn io.quarkus.platform:quarkus-maven-plugin:3.5.0:create \
+    -DprojectGroupId=de.mwe.dev \
+    -DprojectArtifactId=getting-started-grpc \
+    -Dextensions="quarkus-grpc, quarkus-resteasy-reactive"
