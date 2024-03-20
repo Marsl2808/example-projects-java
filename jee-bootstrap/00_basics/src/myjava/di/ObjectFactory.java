@@ -1,28 +1,28 @@
 package myjava.di;
 
-public class ConfigurationFactory {
+public class ObjectFactory {
 
-  private static final ConfigurationFactory INSTANCE = new ConfigurationFactory();
+  private static final ObjectFactory INSTANCE = new ObjectFactory();
 
-  private Configuration product;
+  private Object product;
 
-  private ConfigurationFactory() {
+  private ObjectFactory() {
     // first aproach -> ConfigurationFactory needs to be recompiled
     // this.product = new SystemPropertyConfiguration();
 
     // 2nd approach -> load class by configurable String (typ. String is read from XML)
     try {
-      this.product = (Configuration) Class.forName("myjava.di.SystemPropertyConfiguration").newInstance();
+      this.product = Class.forName("myjava.di.SystemPropertyConfiguration").newInstance();
     } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
       throw new IllegalStateException("Product not found!", e);
     }
   }
 
-  public Configuration create() {
+  public Object create() {
     return this.product;
   }
 
-  public static final ConfigurationFactory getInstance() {
+  public static final ObjectFactory getInstance() {
     return INSTANCE;
   }
 }

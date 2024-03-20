@@ -3,7 +3,12 @@ package myjava.annotations;
 public class Facade {
 
   @MyInject(value = MyInject.DayTime.MORNING)
-  Service service;
+  private Service service;
 
   String anotherField;
+
+  @Override
+  public String toString() {
+    return "Facade [service=" + service + ", anotherField=" + anotherField + "]";
+  }
 }

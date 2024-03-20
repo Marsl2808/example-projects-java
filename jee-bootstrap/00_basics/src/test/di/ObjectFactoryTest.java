@@ -3,23 +3,23 @@ package test.di;
 import static org.junit.Assert.assertNotNull;
 
 import myjava.di.Configuration;
-import myjava.di.ConfigurationFactory;
+import myjava.di.ObjectFactory;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class ConfigurationFactoryTest {
+public class ObjectFactoryTest {
 
-  private ConfigurationFactory cut;
+  private ObjectFactory cut;
 
   @Before
   public void init(){
-    this.cut = ConfigurationFactory.getInstance();
+    this.cut = ObjectFactory.getInstance();
   }
 
   @Test
   public void testCreate() {
-    Configuration product = this.cut.create();
+    Configuration product = (Configuration) this.cut.create();
     assertNotNull(product);
   }
 }
