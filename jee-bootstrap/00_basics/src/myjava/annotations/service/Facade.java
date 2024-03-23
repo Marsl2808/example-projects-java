@@ -1,4 +1,4 @@
-package myjava.annotations;
+package myjava.annotations.service;
 
 public class Facade {
 
@@ -6,6 +6,10 @@ public class Facade {
   private Service service;
 
   String anotherField;
+
+  public void invokeService(){
+    service.serve();
+  }
 
   @Override
   public String toString() {
